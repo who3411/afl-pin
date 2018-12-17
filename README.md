@@ -11,8 +11,9 @@ but still, afl qemu mode is 5-10x faster than that ...
 Installation
 ============
 1. download, compile and install afl => https://github.com/mirrorer/afl
-2. download and unpack pin => https://software.intel.com/en-us/articles/pintool-downloads (download 3.6 or later)
-3. execute command
+2. change afl-fuzz.c `shmget` function, `MAPSIZE` → `MAPSIZE + 4`
+3. download and unpack pin => https://software.intel.com/en-us/articles/pintool-downloads (download 3.6 or later)
+4. execute command
 
 ```
 gcc -O0 -o testcode/test1 testcode/test1.c
