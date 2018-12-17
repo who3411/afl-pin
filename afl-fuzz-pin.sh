@@ -52,4 +52,5 @@ export AFL_EXIT_WHEN_DONE=1
 echo Running: afl-fuzz -m $AFL_MEM $OPS -- $PIN_ROOT/pin -t "$CLIENT" $AFLPIN $*
 sleep 1
 test -n "$LOAD" && export PIN_APP_LD_PRELOAD=/usr/local/lib/pintool/forkserver.so
-afl-fuzz -m $AFL_MEM $OPS -- $PIN_ROOT/pin -t "$CLIENT" $AFLPIN $*
+#afl-fuzz -m $AFL_MEM $OPS -- $PIN_ROOT/pin -t "$CLIENT" $AFLPIN $*
+./afl/afl-fuzz -m $AFL_MEM $OPS -- $PIN_ROOT/pin -t "$CLIENT" $AFLPIN $*
